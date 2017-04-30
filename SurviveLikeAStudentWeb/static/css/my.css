@@ -1,0 +1,126 @@
+ .col {
+     margin-left: auto;
+     margin-right: auto;
+     max-width: 600px;
+     background-color: black;
+ }
+
+ /* цвет фона и рамки навигационного меню */
+.navbar-inverse {
+    background: black;
+    border-color: black;
+}
+ /* цвет текста, содержащий название сайта или бренда */
+.navbar-inverse .navbar-brand {
+    float: none;
+    display: inline-block;
+    text-align: center;
+    color: white;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a,
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+    background: #000000;
+    color: white;
+  }
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus{
+    color: rgba(209, 255, 237, 0.35);
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: rgba(209, 255, 237, 0.35);
+}
+.navbar-brand {
+  float: none;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>.play-button{
+    color: #AD1010; !important;
+}
+
+.red_font_color{
+    color: #AD1010;
+}
+
+.dates{
+    color: rgba(209, 255, 237, 0.35);
+}
+
+ .post_title {
+     color: #AD1010;
+     font-family: 'Press Start 2P', cursive;
+ }
+
+ .post_text {
+     color: cornsilk;
+     word-wrap: break-word;
+ }
+
+ body {
+     background-color: black;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .title {
+     color: #AD1010;
+     font-family: 'Press Start 2P', cursive;
+     text-align: center;
+ }
+
+ .list {
+     text-align: center;
+     color: #AD1010;
+ }
+ .list > a:hover {
+     text-align: center;
+     color: rgba(209, 255, 237, 0.35);
+ }
+
+ .text {
+     color: cornsilk;
+     text-align: center;
+ }
+
+ b {
+     color: black;
+     text-align: center;
+ }
+
+ .text_form {
+     color: #AD1010;
+     text-align: center;
+ }
+
+ .regist_form {
+     color: #FFFFFF;
+     margin-top: 10%;
+     margin-left: 40%;
+ }
+
+ .profile_form{
+     color: #000000;
+     margin-top: 5%;
+     margin-left: 30%;
+ }
+ 
+ .white_font{
+     color: #FFFFFF;;
+ }
+
+ .regist_fields{
+     color: #000000;
+     border-radius: 8px;
+ }
+
+ .submit-button{
+     border-radius: 8px;
+     margin-left: 90px;
+ }
+
+ .special-font{
+     font-family: 'Press Start 2P', cursive; !important;
+ }

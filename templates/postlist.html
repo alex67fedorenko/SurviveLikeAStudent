@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<nav role="navigation" class="navbar navbar-inverse">
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li><a href="/userlist">All Users</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+      <!--<li class="active"><a href="/posts?username={{ who }}">My Page</a></li>-->
+
+      <li><a href="/game" class="play-button">PLAY</a></li>
+                    {% if current %}
+          <li><a href="/newpost">Add new feedback</a></li>
+          {% if notcreate %}
+              <li><a href="/profile_create">Create my profile</a></li>
+          {% else %}
+          <li><a href="/profile_change">Change my profile</a></li>
+          {% endif %}
+      {% endif %}
+      <li><a href="/">Log out</a></li>
+                </ul>
+              </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="container border-container">
+        <div class="row">
+          <div class="col-md-3">
+          {% if notcreate %}
+              <div class="post_text">
+              <p>Here could be information about profile...</p>
+              </div>
+          {% else %}
+              <div class="post_title"><h1>{{ profile.user }}</h1></div>
+              {% if profile.image.url|length > 0 %}
+            {% if profile.image != 'False' %}
+                <img style="max-width:70%" src="{{ profile.image.url }}">
+            {% endif %}
+        {% endif %}
+
+              <div class="post_text">
+              <p>Name:  {{ profile.full_name }}</p>
+              <p>About:  <br> {{ profile.about }}</p>
+              <p class="red_font_color">Score:  <br> {{ profile.score }}</p>
+                  </div>
+          {% endif %}
+          </div>
+          <div class="col-md-9">
+              <div class="col">
+                {% for post in posts %}
+                    <div class="post_title"><h1><a href="{% url 'curr_post' pk=post.pk %}" style="color: #AD1010">{{ post.title }}</a></h1></div>
+                    <div class="post_text">
+                        <p class="dates">{{ post.published_date }} - {{ post.author }} </p>
+                        <p>{{ post.text }}</p>
+                    </div>
+                {% empty %}
+                    <div class="post_text">Empty.</div>
+                {% endfor %}
+              </div>
+
+          </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+{% endblock %}

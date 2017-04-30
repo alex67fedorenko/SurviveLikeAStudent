@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+        {% if deletion %}
+      <li><a href="/posts?username={{ who }}">Back to My Page</a></li>
+    {% else %}
+      <li><a href={{ back }}>Back</a></li>
+        {% endif %}
+    </ul>
+  </div>
+</nav>
+
+<div class="text">{{ error }}</div>
+
+{% endblock %}

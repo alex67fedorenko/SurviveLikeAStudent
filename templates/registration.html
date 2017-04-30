@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/">Back</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="regist_form">
+<form action="" method="post">
+      {% csrf_token %}
+    <div class="regist_fields">
+        <p class="white_font">Username</p>
+      {{ form.username}}
+        <br>
+        <br>
+        <p class="white_font">Password</p>
+      {{ form.password1}}
+        <br>
+        <br>
+        <p class="white_font">Confirm password</p>
+      {{ form.password2}}
+        <br>
+        <br>
+        <div class="white_font">{{ form.errors }}</div>
+    </div>
+      <b><button type="submit" class="submit-button">Sign up</button></b>
+    </form>
+    </div>
+
+{% endblock %}

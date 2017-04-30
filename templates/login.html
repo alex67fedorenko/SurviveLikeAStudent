@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block container %}
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/">Back</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="regist_form">
+<form margin="margin-right" action="/login">
+    <div class="regist_fields">
+        <p class="white_font">Username</p>
+        {{ form.login }}
+        <br>
+        <br>
+        <p class="white_font">Password</p>
+        {{ form.passw }}
+        <br>
+        <br>
+    <b><input type="submit" value="Log in" class="submit-button"></b>
+    </div>
+</form>
+</div>
+
+{%endblock%}

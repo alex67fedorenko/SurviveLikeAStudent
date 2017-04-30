@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<nav role="navigation" class="navbar navbar-inverse">
+   <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/posts?username={{ who }}">Back</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="profile_form">
+<form method="POST" class="post-form" action="">
+    {% csrf_token %}
+    <p class="white_font">Subject: </p>
+{{ form.title }}
+    <br>
+    <br>
+     <p class="white_font">Your feels: </p>
+{{ form.text }}
+    <br>
+    <br>
+<b><button type="submit">Done!</button></b>
+</form>
+</div>
+
+ {% endblock %}

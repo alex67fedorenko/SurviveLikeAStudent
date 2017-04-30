@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block container %}
+{% load staticfiles %}
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/posts?username={{ who }}">Back to My Page</a></li>
+    </ul>
+  </div>
+</nav>
+<style type="text/css">
+    .ccc{
+    margin:0 auto;
+    width:700px;
+    }
+</style>
+    <div class="ccc">
+    <embed id="UnityEmbed" src="{% static 'WebBuild-05-04-17.unity3d' %}" width="700" height="500" type="application/vnd.unity" pluginspage="http://www.unity3d.com/unity-web-player-2.x"></embed>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script type="text/javascript" language="javascript">
+<!--
+function SayHello( arg )
+{
+    // show the message
+    //alert( arg );
+{#    var body = {score: arg};#}
+{##}
+{#    $.post("/game_get_score", body, function (data) {#}
+{#        //lol#}
+{#    });#}
+
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "/get_score?score=" + arg, false);
+    xmlHttp.send(null);
+    //return xmlHttp.responseText;
+
+{#    var data = {'score': arg};#}
+{#    $.post("/game_get_score", data, function(response){#}
+{#        if(response === 'success'){ alert('Yay!'); }#}
+{#        else{ alert('Error! :('); }#}
+{#    });#}
+
+}
+-->
+</script>
+
+{% endblock %}

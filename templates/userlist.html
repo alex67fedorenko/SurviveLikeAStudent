@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block container %}
+<nav role="navigation" class="navbar navbar-inverse">
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="/userlist">All Users</a></li>
+    <li><a href="/all_posts">All feedbacks</a></li>
+    </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">{{ where }}</a></li>
+    </ul>
+    </div>
+</nav>
+
+<div class="col">
+<div class="text">Choose the user:</div>
+<div class="list">
+    {% block content %}
+    {% for i in users%}
+        <br>
+        <a class="list" href="/posts?username={{ i }}">{{ i }}</a>
+    {% endfor %}
+{% endblock %}
+</div>
+</div>
+{% endblock %}
